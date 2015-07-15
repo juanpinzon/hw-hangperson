@@ -8,14 +8,17 @@ describe HangpersonGame do
       game.guess(letter)
     end
   end
-  describe 'new', :pending => true do
-    it 'new' do
-      subject { HangpersonGame.new('glorp') }
-      expect(:word).to eq('glorp')
-      expect(:guesses).to eq('')
-      expect(:wrong_guesses).to eq('')
+
+  describe 'new' do
+    it "takes a parameter and returns a HangpersonGame object" do      
+      @hangpersonGame = HangpersonGame.new('glorp')
+      expect(@hangpersonGame).to be_an_instance_of(HangpersonGame)
+      expect(@hangpersonGame.word).to eq('glorp')
+      expect(@hangpersonGame.guesses).to eq('')
+      expect(@hangpersonGame.wrong_guesses).to eq('')
     end
   end
+
   describe 'guessing' do
     context 'correctly' do
       before :each do
@@ -111,7 +114,3 @@ describe HangpersonGame do
     end
   end
 end
-
-    
-    
-    
